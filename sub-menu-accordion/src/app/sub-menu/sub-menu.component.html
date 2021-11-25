@@ -1,0 +1,115 @@
+<header class="site-header">
+    <div class="container">
+        <div class="header-wrapper">
+            <div class="logo-wrapper">
+                <a href="#" title="Avi Law"><img src="../../assets/images/avi_law_logo_02.png" alt="Logo"></a>
+            </div>
+            <div class="hamburger-menu" (click)="mobile_menu()">
+                <span></span>
+            </div>
+            <nav>
+                <ul>
+                    <li class="has-submenu">
+                        <a href="#">Home</a>
+                        <span class="submenu-arrow" (click) = "submenu()"></span>
+                        <ul class="sub-menu">
+                            <li><a href="#">Sub Menu1</a></li>
+                            <li class="has-submenu">
+                                <a href="#">Sub Menu2</a>
+                                <span class="submenu-arrow" (click) = "submenu()"></span>
+                                <ul class="sub-menu">
+                                    <li><a href="#">Sub Inner Menu1</a></li>
+                                    <li><a href="#">Sub Inner Menu2</a></li>
+                                    <li><a href="#">Sub Inner Menu3</a></li>
+                                    <li><a href="#">Sub Inner Menu4</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-submenu">
+                                <a href="#">Sub Menu3</a>
+                                <span class="submenu-arrow" (click) = "submenu()"></span>
+                                <ul class="sub-menu">
+                                    <li><a href="#">Sub Inner Menu1</a></li>
+                                    <li><a href="#">Sub Inner Menu2</a></li>
+                                    <li><a href="#">Sub Inner Menu3</a></li>
+                                    <li><a href="#">Sub Inner Menu4</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Sub Menu4</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#">Home1</a>
+                        <span class="submenu-arrow" (click) = "submenu()"></span>
+                        <ul class="sub-menu">
+                            <li><a href="#">Sub Menu1</a></li>
+                            <li><a href="#">Sub Menu2</a></li>
+                            <li><a href="#">Sub Menu3</a></li>
+                            <li><a href="#">Sub Menu4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Home2</a></li>
+                    <li><a href="#">Home3</a></li>
+                    <li><a href="#">Home4</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+<main>
+    <section>
+        <div class="rool-book-page">
+            <div class="container">
+                <div class="two-col-wrapper">
+                    <div class="inner-col left-col">
+                        <div class="accordion-wrapper" id="level-01" data-id="data-level-01">
+                            <div class="accordion-title" (click)="accordianList($event)">
+                                <span>Normquellendetails</span>
+                                <i class="fa fa-angle-down"></i>
+                            </div>
+                            <div class="accordion-body">
+                                <div class="main-row">
+                                    <h3>Stammfassung</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-wrapper" id="level-02" data-id="data-level-02">
+                            <div class="accordion-title" (click)="accordianList($event)">
+                                <span>Normquellendetails</span>
+                                <i class="fa fa-angle-down"></i>
+                            </div>
+                            <div class="accordion-body">
+                                <div class="main-row">
+                                    <h3>Stammfassung</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inner-col right-col">
+                        <div class="accordion-wrapper" data-id="level-01" id="data-level-01">
+                            <div class="accordion-title" (click)="accordianList($event)">
+                                <span>Normquellendetails</span>
+                                <i class="fa fa-angle-down"></i>
+                            </div>
+                            <div class="accordion-body">
+                                <div class="main-row">
+                                    <h3>Stammfassung</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-wrapper" data-id="level-02" id="data-level-02">
+                            <div class="accordion-title" (click)="accordianList($event)">
+                                <span>Normquellendetails</span>
+                                <i class="fa fa-angle-down"></i>
+                            </div>
+                            <div class="accordion-body">
+                                <div class="main-row">
+                                    <h3>Stammfassung</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>      
+    </section>
+</main>

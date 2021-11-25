@@ -1,0 +1,453 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+::ng-deep body{
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #029fdb;
+    font-size: 16px;
+    line-height: 1.321;
+}
+*{
+    box-sizing: border-box;
+}
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+ul{
+    padding: 0;
+    list-style: none;
+}
+a{
+    transition: all 0.5s;
+    display: block;
+    text-decoration: none;
+}
+
+
+.site-header {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    background-color: #000;
+}
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo-wrapper a img {
+    width: 200px;
+}
+nav ul li.has-submenu .sub-menu > li:hover > a{
+    background-color: rgba(2,159,219,0.1);
+}
+nav ul li.has-submenu .sub-menu li a{
+    padding: 10px 15px;
+    color: #029fdb;
+}
+nav ul li.has-submenu:hover > .sub-menu{
+    opacity: 1;
+    visibility: visible;
+}
+nav ul li.has-submenu .sub-menu .submenu-arrow{
+    right: 8px;
+    transform: translateY(-50%) rotate(-90deg);
+}
+nav ul li.has-submenu .sub-menu{
+    position: absolute;
+    min-width: 200px;
+    background-color: #fff;
+    box-shadow: 0 0 7px 5px rgb(0 0 0 / 10%);
+    left: 50%;
+    transform: translateX(-50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+}
+nav ul li.has-submenu .sub-menu .sub-menu {
+    top: 0;
+    transform: none;
+    left: 100%;
+}
+nav ul li.has-submenu .submenu-arrow{
+    display: block;
+    background-image: url(/assets/images/sub-menu-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 15px;
+    width: 15px;
+    background-size: 12px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -18px;
+    transition: all 0.3s;
+}
+nav ul li.has-submenu{
+    position: relative;
+}
+nav > ul > li > a{
+    color: #029fdb;
+    padding: 40px 0;
+}
+nav > ul > li:hover > a{
+    color: #fff;
+}
+nav > ul > li + li {
+    margin-left: 50px;
+}
+nav > ul {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+.hamburger-menu{
+    display: none;
+}
+
+@media(max-width:767px) {
+    .hamburger-menu span:after,
+    .hamburger-menu span:before{
+        margin-left: -5px;
+        position: absolute;
+        content: "";
+        background-color: #fff;
+        height: 2px;
+        width: 23px;
+        transition: all 0.3s;
+        -o-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+    }
+    ::ng-deep.open-menu .hamburger-menu span:after {
+        background-color: #fff !important;
+        transform: rotate(-45deg) !important;
+        top: 0 !important;
+    }
+    ::ng-deep.open-menu .hamburger-menu span{
+        background-color: transparent !important;
+    }
+    ::ng-deep.open-menu .hamburger-menu span:before {
+        background-color: #fff !important;
+        transform: rotate(45deg) !important;
+        bottom: 0 !important;  
+    }
+    .hamburger-menu span:after {
+        top: -8px;
+    }
+    .hamburger-menu span:before {
+        bottom  : -8px;
+    }
+    .hamburger-menu span{
+        position: absolute;
+        font-size: 0;
+        line-height: 0;
+        background-color: #fff;
+        height: 2px;
+        width: 18px;
+        top: 50%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+        transition: all 0.3s;
+        -o-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        margin-left: 5px;
+    }
+    .hamburger-menu{
+        display: block;
+        position: relative;
+        height: 25px;
+        width: 25px;
+        z-index: 11;
+        cursor: pointer;
+        overflow: hidden;
+        margin-left: 25px;
+    }
+    nav{
+        transition: all 0.3s;
+        -o-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+        position: fixed;
+        top: 108px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #029fdb;
+        display: block;
+        z-index: -1;
+        opacity: 0;
+        margin: 0;
+        padding: 0;
+        visibility: hidden;
+    }
+    ::ng-deep.open-menu nav{
+        opacity: 1;
+        z-index: 2;
+        visibility: visible;
+    }
+    nav > ul{
+        display: block;
+        overflow-y: auto;
+        height: calc(100vh - 120px);
+    }
+    nav ul li.has-submenu .sub-menu{
+        position: relative;
+        min-width: 100%;
+        box-shadow: none;
+        background-color: transparent;
+        left: auto;
+        transform: none;
+        visibility: visible;
+        opacity: 1;
+        transition: none;
+        display: none;
+    }
+    nav ul li.has-submenu.submenu-open > .sub-menu{
+        display: block;
+    }
+    nav ul li.has-submenu .sub-menu .sub-menu {
+        top: auto;
+        transform: none;
+        left: auto;
+    }    
+    nav > ul > li > a{
+        color: #fff;
+        padding: 10px 25px;
+    }
+    nav ul li.has-submenu .sub-menu li a{
+        color: #fff;
+        padding: 10px 40px;
+    }
+    nav ul li.has-submenu .sub-menu .sub-menu li a{
+        padding: 10px 55px;
+    }
+    nav > ul > li + li{
+        margin-left: 0;
+    }
+    nav ul li.has-submenu .submenu-arrow{
+        background-image: url(/assets/images/sub-menu-arrow-white.svg);
+        right: 20px;
+        background-size: 16px;
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+        top: 0px;
+        transform: translateY(0);
+        transition: transform 0.3s;
+    }
+    nav ul li.has-submenu .sub-menu li.has-submenu.submenu-open > .submenu-arrow,
+    nav ul li.has-submenu.submenu-open > .submenu-arrow{
+        transform: rotate(180deg);
+    }
+    nav ul li.has-submenu .sub-menu .submenu-arrow{
+        transform: none;
+        right: 20px;
+    }
+    .site-header{
+        padding: 10px 0;
+    }
+}
+
+
+/* accordion */
+main{
+    padding-top: 100px;
+}
+
+.rool-book-page {
+    padding: 50px 0;
+}
+.rool-book-page .container {
+    max-width: 100%;
+}
+.rool-book-page .two-col-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -20px;
+    justify-content: center;
+}
+.rool-book-page .two-col-wrapper .inner-col {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 20px;
+}
+.rool-book-page .two-col-wrapper .inner-col.right-col {
+    position: relative;
+}
+.rool-book-page .two-col-wrapper .inner-col.right-col:after {
+    position: absolute;
+    content: "";
+    width: 5px;
+    top: 0;
+    bottom: 0;
+    background-color: #cdcdcd;
+    left: -3px;
+}
+.breadcrumbs, .breadcrumbs ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px 40px;
+}
+.breadcrumbs > li {
+    padding: 0 10px;
+    position: relative;
+}
+.breadcrumbs > li:before {
+    position: absolute;
+    content: '>';
+    right: -4px;
+    top: 2px;
+    color: #000;
+}
+.breadcrumbs > li:last-child::before {
+    display: none;
+}
+.breadcrumbs li a {
+    text-decoration: underline;
+    font-size: 11px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+}
+.breadcrumbs li.has-submenu ul {
+    position: absolute;
+    z-index: 3;
+    background-color: #f5f5f5;
+    top: 100%;
+    left: 0;
+    display: none;
+    -webkit-box-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+    padding: 5px 10px;
+    font-size: inherit;
+    line-height: inherit;
+    max-height: 360px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.breadcrumbs li.has-submenu:hover ul {
+    display: block;
+}
+.breadcrumbs li.has-submenu:hover > a {
+    text-decoration: none;
+}
+.breadcrumbs li.has-submenu ul li {
+    white-space: nowrap;
+}
+.breadcrumbs li.has-submenu ul li a:hover {
+    text-decoration: none;
+}
+.rool-book-page .two-col-wrapper .inner-col .content-wrapper p {
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+.rool-book-page .two-col-wrapper .inner-col .content-wrapper p strong {
+    font-weight: 700;
+}
+.rool-book-page .two-col-wrapper .inner-col .content-wrapper p.bottom-text {
+    margin: 30px 0;
+}
+.rool-book-page .two-col-wrapper .inner-col .links-wrapper {
+    text-align: center;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    margin-bottom: 20px;
+}
+.rool-book-page .two-col-wrapper .inner-col .links-wrapper a {
+    text-decoration: underline;
+}
+.rool-book-page .two-col-wrapper .inner-col .links-wrapper a:hover {
+    text-decoration: none;
+}
+.rool-book-page .accordion-wrapper .accordion-title {
+    background-color: #029FDB;
+    color: #fff;
+    padding: 4px 10px 2px;
+    line-height: 1.28;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+.rool-book-page .accordion-wrapper .accordion-title i {
+    font-size: 20px;
+}
+.rool-book-page .accordion-wrapper .accordion-body {
+    display: none;
+}
+.rool-book-page .accordion-wrapper.open .accordion-body {
+    display: block;
+}
+.rool-book-page .accordion-wrapper .accordion-body .main-row + .main-row {
+    margin-top: 35px;
+}
+.rool-book-page .accordion-wrapper .accordion-body .main-row h3 {
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #000;
+}
+.rool-book-page .accordion-wrapper .accordion-body .content-wrapper .inner-row:nth-child(odd) {
+    background-color: #cdcdcd;
+}
+.rool-book-page .accordion-wrapper .accordion-body .content-wrapper .inner-row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px 0;
+}
+.rool-book-page .accordion-wrapper .accordion-body .content-wrapper .inner-row .left-col {
+    flex: 0 0 220px;
+    max-width: 220px;
+    padding: 0 15px;
+}
+.rool-book-page .accordion-wrapper .accordion-body .content-wrapper .inner-row .right-col {
+    flex: 0 0 calc(100% - 220px);
+    max-width: calc(100% - 220px);
+    padding: 0 15px;
+}
+.rool-book-page .accordion-wrapper .accordion-body .content-wrapper .inner-row .left-col a {
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    line-height: 1.8;
+    text-decoration: underline;
+}
+.rool-book-page .accordion-wrapper .accordion-body .content-wrapper .inner-row .left-col a:hover {
+    text-decoration: none;
+}
+.rool-book-page .accordion-wrapper .accordion-body .content-wrapper .inner-row .right-col span {
+    display: block;
+    line-height: 1.8;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+}
+@media screen and (max-width: 1199px) {
+    .rool-book-page .accordion-wrapper .accordion-body .content-wrapper .inner-row .left-col {
+        flex: 0 0 180px;
+        max-width: 180px;
+    }
+    .rool-book-page .accordion-wrapper .accordion-body .content-wrapper .inner-row .right-col {
+        flex: 0 0 calc(100% - 180px);
+        max-width: calc(100% - 180px);
+    }
+}

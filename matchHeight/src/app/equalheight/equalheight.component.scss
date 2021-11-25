@@ -1,0 +1,23 @@
+.inner-content-block {
+    display: flex;
+    color: #fff;
+    background: #000;
+    margin-top: 50px;
+    h3 {
+        span {
+            display: block;
+        }
+    }
+    .left-block {
+        max-width: 50%;
+        flex: 0 0 50%;
+        border-right: 2px solid #fff;
+        padding: 20px;
+    }
+    .right-block {
+        
+        max-width: 50%;
+        flex: 0 0 50%;
+        padding: 20px;
+    }
+}

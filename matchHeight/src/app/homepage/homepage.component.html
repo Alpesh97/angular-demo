@@ -1,0 +1,19 @@
+<div class="page-wrapper" #pagewrapper>
+    <div class="custom-tab-accordian-wrapper">
+        <ul>
+            <li *ngFor="let item of tab_list">
+                <a href="javascript:void(0)" title={{item.link}} data-id={{item.dataid}}
+                    class="tab-link {{item.className}}" (click)='tab()'>{{item.link}}</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="inner-tab" *ngFor="let item of innertabcontent" data-id={{item.datatab}}
+                class={{item.className}}>
+                <p>{{item.content}}</p>
+            </div>
+        </div>
+    </div>
+    <a class="mble-slider" [routerLink]="'/mobile-slider'"> Mobile slider</a>
+    <a class="mble-slider" [routerLink]="'/equal-height'"> Equal Height</a>
+</div>
+<app-footer></app-footer>
